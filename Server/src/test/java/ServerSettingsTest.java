@@ -9,6 +9,7 @@ class ServerSettingsTest {
     void getTest() {
         ServerSettings settings = ServerSettings.get();
         ServerSettings settingsDouble = ServerSettings.get();
+
         assert settings != null;
         assertThat(8080, is(settings.port));
         assertThat(settings, is(settingsDouble));

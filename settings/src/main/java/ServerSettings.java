@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -16,7 +17,8 @@ public class ServerSettings {
     public static ObjectMapper mapper = new ObjectMapper(); // Создаем маппер
 
     // TODO: как получить относительный путь
-    public static File pathSettingsFiles = new File("C:\\JavaProjects\\netology\\CW_Network-Chat\\","settings.txt");
+    public static File pathSettingsFiles = new File(Paths.get(".\\settings\\src\\main\\resources").
+            normalize().toAbsolutePath().toString(), "settings.txt");
 
     private ServerSettings(@JsonProperty("port") int port,
                            @JsonProperty("serverName") String name) {

@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,8 @@ public class Client {
             Runnable logic = () -> {
                 // Выбор имени для участия в чате. Зададим константой для быстроты проверок
                 String name = "Billy Milligan " + finalI;
-                String logName = ".\\" + name.replace(" ", "_") + ".log";
+                String logName = Paths.get("Client\\src\\main\\resources").normalize().toAbsolutePath() +
+                         "\\" + name.replace(" ", "_") + ".log";
 
                 // Получаем настройки сервера, получаем порт и т.д. что нам надо
                 ServerSettings settings = ServerSettings.get();

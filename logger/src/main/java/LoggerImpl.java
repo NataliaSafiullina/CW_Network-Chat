@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -33,7 +34,8 @@ public class LoggerImpl implements Logger {
      */
     @Override
     public void log(String msg) {
-        String fileName = "log_" + System.getProperty("user.name") + ".log";
+        String fileName = Paths.get("Server\\src\\main\\resources").normalize().toAbsolutePath() +
+                "\\log_" + System.getProperty("user.name") + ".log";
         try (BufferedWriter bw = createLogFile(fileName)) {
             log(msg, bw);
         } catch (IOException e) {
