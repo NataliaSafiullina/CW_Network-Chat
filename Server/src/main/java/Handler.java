@@ -66,7 +66,6 @@ class Handler implements Runnable {
                                 printWriter.println(client.getValue() + ": " + clientMsg);
                                 printWriter.flush();
                             }
-                            //else printWriter.println("доставлено");
                         }
                 }
             }

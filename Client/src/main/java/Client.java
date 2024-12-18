@@ -45,16 +45,6 @@ public class Client {
                     // Отправляем разные команды и сообщения серверу
                     // TODO: как добиться, чтобы на exit получить ответ bay
                     for (String message : messages) {
-//                        // Ради проверки, попробуем получить все сообщения перед выходом (это конечно не для реального чата)
-//                        if (message.equals("/Exit")) {
-//                            while (true) {
-//                                // Из потока на чтение получаем строку, которую прислал сервер
-//                                String response = bufferedReader.readLine();
-//                                if (response == null) break;
-//                                System.out.printf("Server has sent: %s \n", response);
-//                                logger.log(response + "\n", bufferLog);
-//                            }
-//                        }
                         // Метод потока на запись отправляет сообщение
                         printWriter.println(name + "|||" + message);
                         System.out.printf("%s has sent: %s \n", name, message);
